@@ -69,6 +69,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:dst_ip, :dst_port, :async, :msg_raw, :message_data, :message_response)
+      params.require(:message).permit(:dst_ip, :dst_port, :async, :msg_raw, :message_data)
     end
 end
