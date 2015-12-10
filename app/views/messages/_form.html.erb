@@ -1,0 +1,41 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dst_ip %><br>
+    <%= f.number_field :dst_ip %>
+  </div>
+  <div class="field">
+    <%= f.label :dst_port %><br>
+    <%= f.number_field :dst_port %>
+  </div>
+  <div class="field">
+    <%= f.label :async %><br>
+    <%= f.check_box :async %>
+  </div>
+  <div class="field">
+    <%= f.label :msg_raw %><br>
+    <%= f.check_box :msg_raw %>
+  </div>
+  <div class="field">
+    <%= f.label :message_data %><br>
+    <%= f.text_field :message_data %>
+  </div>
+  <div class="field">
+    <%= f.label :message_response %><br>
+    <%= f.text_field :message_response %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

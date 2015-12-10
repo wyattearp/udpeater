@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dst ip:</strong>
+  <%= @message.dst_ip %>
+</p>
+
+<p>
+  <strong>Dst port:</strong>
+  <%= @message.dst_port %>
+</p>
+
+<p>
+  <strong>Async:</strong>
+  <%= @message.async %>
+</p>
+
+<p>
+  <strong>Msg raw:</strong>
+  <%= @message.msg_raw %>
+</p>
+
+<p>
+  <strong>Message data:</strong>
+  <%= @message.message_data %>
+</p>
+
+<p>
+  <strong>Message response:</strong>
+  <%= @message.message_response %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

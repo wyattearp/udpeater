@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dst_ip: 1
+  dst_port: 1
+  async: false
+  msg_raw: false
+  message_data: 
+  message_response: 
+
+two:
+  dst_ip: 1
+  dst_port: 1
+  async: false
+  msg_raw: false
+  message_data: 
+  message_response: 
