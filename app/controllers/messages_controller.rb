@@ -31,8 +31,14 @@ class MessagesController < ApplicationController
     @message.dst_ip = IPAddr.new(address, Socket::AF_INET).to_i()
 
     udp_sock.connect(address, @message.dst_port.to_i())
-    udp_sock.send(@message.message_data, 0)
+    if @message.msg_raw
+      # TOOD: support correctly, this is WRONG
+      udp_sock.send(@message.message_data, 0)
+    else
+      udp_sock.send(@message.message_data, 0)
+    end
 
+    # we're only doing sync stuff and expecting a response for the moment
     unless @message.async
       begin
         result = udp_sock.recvfrom(65535)
