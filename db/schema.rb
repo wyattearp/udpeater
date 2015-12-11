@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210023839) do
+ActiveRecord::Schema.define(version: 20151211021236) do
 
   create_table "messages", force: :cascade do |t|
-    t.integer  "dst_ip"
+    t.integer  "dst_ip",           limit: 8
     t.integer  "dst_port"
     t.boolean  "async"
     t.boolean  "msg_raw"
     t.binary   "message_data"
     t.binary   "message_response"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
