@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
     unless @message.async
       begin
         result = udp_sock.recvfrom(65535)
-        @message.message_response = result
+        @message.message_response = result[0]
       rescue Errno::ECONNREFUSED
         # TODO: this is terrible
         @message.message_response = ""
